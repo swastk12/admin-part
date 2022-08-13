@@ -55,5 +55,5 @@ app.use("/ADMIN/categorys", categoryRoute);
 
 
 app.listen( PORT, ()=>{
-console.log("backend connected server ")
+console.log("backend connected servers ")
 })
