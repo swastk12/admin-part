@@ -1,5 +1,5 @@
 import axios from "axios" 
 
 export const axiosInstance = axios.create({
-    baseURL: "http://15.207.197.246:5000/ADMIN/"
+    baseURL: "http://15.207.197.246:5000/admin/"
 })
