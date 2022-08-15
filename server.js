@@ -34,17 +34,17 @@ mongoose.connect(process.env.MONGO_URL, {
   });
   
   const upload = multer({ storage: storage });
-  app.post("/admin-part/upload/", upload.single("file"), (req, res) => {
+  app.post("/upload", upload.single("file"), (req, res) => {
     res.status(200).json("File has been uploaded");
   });
 
 
 
 
-app.use("/admin-part/auths", authRoute);
-app.use("/admin-part/users", userRoute);
-app.use("/admin-part/posts", postRoute);
-app.use("/admin-part/categorys", categoryRoute);
+app.use("/ADMIN/auths", authRoute);
+app.use("/ADMIN/users", userRoute);
+app.use("/ADMIN/posts", postRoute);
+app.use("/ADMIN/categorys", categoryRoute);
 
 
 
