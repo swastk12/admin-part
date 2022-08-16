@@ -41,10 +41,10 @@ mongoose.connect(process.env.MONGO_URL, {
 
 
 
-app.use("ADMIN/auths", authRoute);
-app.use("ADMIN/users", userRoute);
-app.use("ADMIN/posts", postRoute);
-app.use("ADMIN/categorys", categoryRoute);
+app.use("/ADMIN/auths", authRoute);
+app.use("/ADMIN/users", userRoute);
+app.use("/ADMIN/posts", postRoute);
+app.use("/ADMIN/categorys", categoryRoute);
 
 
 
