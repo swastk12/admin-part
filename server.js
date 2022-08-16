@@ -6,8 +6,9 @@ const authRoute = require("./routes/auths");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categorys");
-const path = require("path");
 const multer = require("multer");
+const path = require("path");
+
 
 const PORT = process.env.PORT || 5000;
 
@@ -34,23 +35,23 @@ mongoose.connect(process.env.MONGO_URL, {
   });
   
   const upload = multer({ storage: storage });
-  app.post("upload", upload.single("file"), (req, res) => {
+  app.post("/ADMIN/upload", upload.single("file"), (req, res) => {
     res.status(200).json("File has been uploaded");
   });
 
 
 
 
-app.use("auths", authRoute);
-app.use("users", userRoute);
-app.use("posts", postRoute);
-app.use("categorys", categoryRoute);
+app.use("ADMIN/auths", authRoute);
+app.use("ADMIN/users", userRoute);
+app.use("ADMIN/posts", postRoute);
+app.use("ADMIN/categorys", categoryRoute);
 
 
 
   app.use(express.static(path.join(__dirname,"/client/build")))
   app.get("*",(req,res)=> { 
-    res.sendFile(path.join(__dirname, '/client/build','index.html'))
+  res.sendFile(path.join(__dirname, '/client/build','index.html'))
   });
 
 
